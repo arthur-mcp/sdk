@@ -26,15 +26,21 @@
     "typecheck": "npm run gen:version && tsc --noEmit",
     "pretest": "npm run gen:version",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:workers": "vitest run --config vitest.workers.config.ts",
+    "test:all": "npm test && npm run test:workers"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.16.20",
     "@types/node": "^20.14.0",
+    "msw": "^2.14.6",
+    "tsx": "^4.22.4",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.105.0"
   }
 }
